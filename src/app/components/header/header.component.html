@@ -1,0 +1,9 @@
+<div class="toolbar" role="banner">
+  <span class="navTrigger" (click)="clickEvent()"><strong>Menu</strong></span>
+  <nav class="navigation" [ngClass]="{'opened': menuOpened}">
+      <ul>
+          <li><a routerLink="/" routerLinkActive="active">Home</a></li>
+          <li><a routerLink="/cities" routerLinkActive="active">Cities</a></li>
+      </ul>
+  </nav>
+</div>

@@ -1,0 +1,22 @@
+.navTrigger {
+  cursor: pointer;
+}
+
+.toolbar {
+  padding: 40px;
+}
+
+nav {
+  position: relative;
+  transform: translateX(-100%);
+  transition: transform ease-in-out 0.5s;
+
+  &.opened {
+    transform: translateX(0);
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+}

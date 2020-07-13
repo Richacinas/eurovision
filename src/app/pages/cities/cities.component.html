@@ -1,0 +1,32 @@
+<h1>Cities</h1>
+<div class="dataWrapper mat-elevation-z8">
+  <mat-form-field>
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+  </mat-form-field>
+  <mat-table [dataSource]="dataSource">
+
+    <!-- ID Column -->
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.id}} </mat-cell>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.name}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="['id', 'name']"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: ['id', 'name'];">
+    </mat-row>
+  </mat-table>
+
+  <mat-paginator #paginator
+    [length]="length"
+    [pageIndex]="pageIndex"
+    [pageSize]="pageSize"
+    [pageSizeOptions]="[10, 25, 100]"
+    (page)="pageEvent = getData($event)"
+  ></mat-paginator>
+</div>
